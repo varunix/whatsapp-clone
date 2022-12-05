@@ -1,5 +1,5 @@
 import { MoreVert } from "@mui/icons-material";
-import { bottomNavigationActionClasses, Menu, MenuItem, styled } from "@mui/material";
+import { Menu, MenuItem, styled } from "@mui/material";
 import { useState } from "react";
 
 const MenuOption = styled(MenuItem)`
@@ -8,7 +8,7 @@ const MenuOption = styled(MenuItem)`
     color: #4A4A4A;
 `
 
-const HeaderMenu = () => {
+const HeaderMenu = ({setOpenDrawer}) => {
 
     const [open, setOpen] = useState(null);
 
@@ -42,7 +42,7 @@ const HeaderMenu = () => {
             }
         }
       >
-        <MenuOption onClick={handleClose}>Profile</MenuOption>
+        <MenuOption onClick={()=>{ handleClose(); setOpenDrawer(true); }}>Profile</MenuOption>
       </Menu>
     </>
   );
