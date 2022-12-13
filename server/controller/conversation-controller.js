@@ -24,3 +24,16 @@ export const newConversation = async (req, res) => {
     return response.status(500).json(error.message);
   }
 };
+
+
+export const getConversation = async (req, res) => {
+  try {
+    const senderId = req.body.senderId;
+    const receiverId = req.body.receiverId;
+    
+    let conversation = await Conversation.findOne({ members: { $all: [receiverId, senderId] }});
+    return response.status(200).json(conversation);
+  } catch (error) {
+    return response.status(200).json(error.message);
+  }
+}
