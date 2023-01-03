@@ -1,7 +1,7 @@
 A clone of whatsapp using ReactJs and NodeJs.
 
 #Technologies
-Socket.io
-Mongoose
-Material UI
-Axios
+*Socket.io
+*Mongoose
+*Material UI
+*Axios
