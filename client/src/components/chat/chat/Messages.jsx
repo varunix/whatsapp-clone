@@ -23,15 +23,16 @@ const Messages = ({ person, conversation }) => {
     const code = e.keyCode || e.which;
     if (code === 13) {
       let message = {
+        conversationId: conversation._id,
         senderId: account.sub,
         receiverId: person.sub,
-        conversationId: conversation._id,
-        type: value,
+        type: 'text',
+        text: value,
       };
 
       await newMessage(message);
 
-      setValue("");
+      setValue('');
     }
   };
 

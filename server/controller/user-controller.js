@@ -17,11 +17,11 @@ export const addUser = async (req, res) => {
   }
 };
 
-export const getUsers = async (request, response) => {
+export const getUsers = async (req, res) => {
   try {
     const users = await User.find({});
-    return response.status(200).json(users);
+    return res.status(200).json(users);
   } catch (error) {
-    return response.status(500).json(error.message);
+    return res.status(500).json(error.message);
   }
 };

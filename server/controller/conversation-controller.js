@@ -11,29 +11,30 @@ export const newConversation = async (req, res) => {
     });
 
     if (exist) {
-      return response.status(200).json("conversation already exists");
+      return response.status(200).json("Conversation already exists");
     }
 
     const newConversation = new Conversation({
-      members: [receiverId, senderId],
+      members: [senderId, receiverId],
     });
 
     await newConversation.save();
-    return response.status(200).json("Conversation saved successfully");
+    return res.status(200).json("Conversation saved successfully");
   } catch (error) {
-    return response.status(500).json(error.message);
+    return res.status(500).json(error.message);
   }
 };
-
 
 export const getConversation = async (req, res) => {
   try {
     const senderId = req.body.senderId;
     const receiverId = req.body.receiverId;
-    
-    let conversation = await Conversation.findOne({ members: { $all: [receiverId, senderId] }});
-    return response.status(200).json(conversation);
+
+    let conversation = await Conversation.findOne({
+      members: { $all: [receiverId, senderId] },
+    });
+    return res.status(200).json(conversation);
   } catch (error) {
-    return response.status(200).json(error.message);
+    return res.status(200).json(error.message);
   }
-}
+};

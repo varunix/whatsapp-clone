@@ -12,6 +12,6 @@ route.get('/users', getUsers);
 route.post('/conversation/add', newConversation);
 route.post('/conversation/get', getConversation);
 
-route.post('message/add', newMessage);
+route.post('/message/add', newMessage);
 
 export default route;
