@@ -1,8 +1,8 @@
 import { Box, styled } from "@mui/material";
 import Footer from "./Footer";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AccountContext } from "../../context/AccountProvider";
-import { newMessage } from "../../../service/api";
+import { getMessages, newMessage } from "../../../service/api";
 
 const Wrapper = styled(Box)`
   background-image: url(${"https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"});
@@ -15,9 +15,17 @@ const Component = styled(Box)`
 `;
 
 const Messages = ({ person, conversation }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   const { account } = useContext(AccountContext);
+
+  useEffect(() => {
+    const getMessageDetails = async() => {
+      let data = await getMessages(conversation._id);
+      console.log(data);
+    }
+    conversation.id && getMessageDetails();
+  }, [person._id, conversation._id])
 
   const sendText = async (e) => {
     const code = e.keyCode || e.which;
