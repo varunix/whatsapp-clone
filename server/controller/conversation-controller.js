@@ -11,7 +11,7 @@ export const newConversation = async (req, res) => {
     });
 
     if (exist) {
-      return response.status(200).json("Conversation already exists");
+      return res.status(200).json("Conversation already exists");
     }
 
     const newConversation = new Conversation({
