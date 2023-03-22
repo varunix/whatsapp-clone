@@ -1,6 +1,5 @@
-import { response } from 'express';
-import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
+import grid from 'gridfs-stream';
 
 const url = "http://localhost:8000";
 
@@ -12,7 +11,7 @@ conn.once('open', () => {
     });
     gfs = grid(conn.db, mongoose.mongo);
     gfs.collection('fs');
-})
+});
 
 export const uploadFile = async (req, res) => {
     if(!req.file) {

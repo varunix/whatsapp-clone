@@ -20,5 +20,8 @@
     "multer-deprecation-warning-fix": "^1.4.3",
     "multer-gridfs-storage": "^5.0.2",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.0"
   }
 }

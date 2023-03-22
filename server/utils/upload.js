@@ -16,12 +16,12 @@ const storage = new GridFsStorage({
 
         //In case of image is not present
         if(match.indexOf(file.mimeType) === -1) {
-            return `${Date.now}-file-${file.originalname}`;
+            return `${Date.now()}-file-${file.originalname}`;
         }
 
         return {
             bucketName: "photos",
-            filename: `${Date.now}-file-${file.originalname}`
+            filename: `${Date.now()}-file-${file.originalname}`
         }
     }
 });
