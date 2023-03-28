@@ -72,7 +72,7 @@ const ImageMessage = ({ message }) => {
                         <Typography style={{ fontSize: 14 }}>{message.text.split('/').pop()}</Typography>
                     </Box>
                 :
-                <img style={{ width: 300, height: '100%', objectFit: 'cover'}} src={message.text} alt={message.text} referrerpolicy="no-referrer" />
+                <img style={{ width: 300, height: '100%', objectFit: 'cover'}} src={message.text} alt={message.text} referrerPolicy="no-referrer" />
             }
             <Time style={{ position: 'absolute', bottom: 0, right: 2 }}>
                 <GetAppIcon

@@ -9,7 +9,7 @@ const io = new Server (9000, {
 let users = [];
 
 const addUser = (userData, socketId) => {
-    !users.some(user => user.sub == userData.sub) && ({...userData, socketId});
+    !users.some(user => user.sub == userData.sub) && users.push({...userData, socketId});
 }
 
 io.on('connection', (socket) => {

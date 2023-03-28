@@ -34,7 +34,7 @@ const Conversations = ({ text }) => {
     socket.current.on("getUsers", users => {
       setActiveUsers(users);
     }, [account]);
-  })
+  });
 
   return (
     <Component>
