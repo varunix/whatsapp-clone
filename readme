@@ -1,7 +1,41 @@
-A clone of whatsapp using ReactJs and NodeJs.
+# WhatsApp Clone
 
-#Technologies
--Socket.io
--Mongoose
--Material UI
--Axios
+This repository contains a clone of WhatsApp built using ReactJs for the frontend and NodeJs for the backend. The application supports real-time messaging using Socket.io, and MongoDB is used as the database with Mongoose for object modeling. Material UI is used for the frontend design, and Axios is used for HTTP requests.
+
+## Features
+
+- Real-time messaging
+- User authentication
+- Message history
+- Online/offline status
+- Responsive design
+
+## Technologies Used
+
+### Frontend
+
+- **ReactJs**: A JavaScript library for building user interfaces.
+- **Material UI**: A popular React UI framework.
+- **Axios**: A promise-based HTTP client for the browser and NodeJs.
+- **Socket.io**: A library for real-time web applications.
+
+### Backend
+
+- **NodeJs**: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- **Express**: A minimal and flexible NodeJs web application framework.
+- **Socket.io**: For real-time bidirectional event-based communication.
+- **MongoDB**: A NoSQL database for storing user data and messages.
+- **Mongoose**: An Object Data Modeling (ODM) library for MongoDB and NodeJs.
+
+## Installation
+
+### Prerequisites
+
+- NodeJs and npm installed on your machine.
+- MongoDB installed and running.
+
+### Clone the repository
+
+```bash
+git clone https://github.com/yourusername/whatsapp-clone.git
+cd whatsapp-clone
